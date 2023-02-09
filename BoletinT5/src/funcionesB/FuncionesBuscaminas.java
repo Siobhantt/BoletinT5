@@ -1,5 +1,6 @@
 package funcionesB;
 
+
 public class FuncionesBuscaminas {
 	public static void tabla() {
 			char pista[] = new char[20];
@@ -8,10 +9,18 @@ public class FuncionesBuscaminas {
 			System.out.print("_ , ");
 		}//fin del for
 	}//fin del metodo
+	
+public int[] tablaLlena(int t[]) {
+char mina= '*';
+int contadorMinas=0;
 
-	public static int[] cosas(t[]) {
-		
-		
+mina =(char) (Math.random()*20);
+	while (contadorMinas<=6) {
+		t[contadorMinas] = mina;
+		contadorMinas++;
 	}
+return t;
+
+}//fin del metodo
 }//fin de la clase
 
