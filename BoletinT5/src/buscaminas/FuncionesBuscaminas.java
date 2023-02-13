@@ -1,4 +1,4 @@
-package funcionesB;
+package buscaminas;
 
 import java.util.Arrays;
 
@@ -77,14 +77,15 @@ public class FuncionesBuscaminas {
 	}//fin del metodo
 	
 	public static boolean ganaste (char tUser[]) {
-		int contadorMinas=0;
+		int contadorAgujeros=14;
 		boolean ganaste=false;
+		
 		for(int i=0;i<tUser.length;i++) {
-			if (tUser[i]=='_') {
-				contadorMinas++;
+			if (tUser[i]=='0' || tUser[i]=='1' || tUser[i]=='2' ) {
+				contadorAgujeros--;
 			}
 		}
-		if(contadorMinas ==6) {
+		if(contadorAgujeros ==0) {
 			ganaste =true; 
 		}
 		return ganaste;

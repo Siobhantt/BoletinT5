@@ -1,12 +1,13 @@
-package funcionesB;
+package buscaminas;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MainBuscaminas {
 
 	public static void main(String[] args) {
 	int posUser;	
-	boolean ganar;
+	boolean ganar=false;
 	char t[]= new char[20];
 	char tablota[]=new char[20];
 	Scanner lee = new Scanner(System.in);
@@ -17,7 +18,7 @@ public class MainBuscaminas {
 	
 	t = FuncionesBuscaminas.tablaLlena(t);
 	t = FuncionesBuscaminas.pistas(t);			
-
+	 System.out.println(Arrays.toString(t));
 	do {
 	System.out.println("Por favor introduzca la posicion que quiere destapar: ");
 	posUser = lee.nextInt();
