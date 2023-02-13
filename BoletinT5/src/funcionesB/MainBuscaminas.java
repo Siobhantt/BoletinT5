@@ -12,7 +12,7 @@ public class MainBuscaminas {
 	Scanner lee = new Scanner(System.in);
 
 	for(int i=0;i<tablota.length;i++) {
-		tablota[i]='ª';
+		tablota[i]='_';
 	}
 	
 	t = FuncionesBuscaminas.tablaLlena(t);

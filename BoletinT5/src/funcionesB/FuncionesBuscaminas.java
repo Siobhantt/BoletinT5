@@ -80,7 +80,7 @@ public class FuncionesBuscaminas {
 		int contadorMinas=0;
 		boolean ganaste=false;
 		for(int i=0;i<tUser.length;i++) {
-			if (tUser[i]=='ª') {
+			if (tUser[i]=='_') {
 				contadorMinas++;
 			}
 		}
