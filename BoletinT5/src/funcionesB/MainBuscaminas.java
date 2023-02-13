@@ -6,7 +6,9 @@ public class MainBuscaminas {
 
 	public static void main(String[] args) {
 		
-		System.out.println(FuncionesBuscaminas.tablaLlena(FuncionesBuscaminas.arrayUser));
+	char t[]= new char[20];
+	
+	System.out.println(Arrays.toString(FuncionesBuscaminas.tablaLlena(t)));
 	}
 
 }
