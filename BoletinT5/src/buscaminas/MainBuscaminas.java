@@ -23,7 +23,7 @@ public class MainBuscaminas {
 	System.out.println("Por favor introduzca la posicion que quiere destapar: ");
 	posUser = lee.nextInt();
 	tablota = FuncionesBuscaminas.muestraT(t, tablota, posUser);
-	ganar = FuncionesBuscaminas.ganaste(t);
+	ganar = FuncionesBuscaminas.ganaste(tablota);
 	} while(t[posUser]!='*' && ganar==false);
 	if (ganar ==true) {
 		System.out.println("Ganaste");
