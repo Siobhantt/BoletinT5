@@ -1,7 +1,5 @@
 package sieteMedia;
 
-import java.util.Scanner;
-
 public class MainSieteMedia {
 	//declaro que el jugador 1 es la posicion 0 del array
 		final static int JUGADOR1 =0;
@@ -9,11 +7,17 @@ public class MainSieteMedia {
 		final static int JUGADOR2 =1;
 		
 	public static void main(String[] args) {
-		int jugadores[] = new int[2];
-		
+		double jugadores[] = new double[2];
 		
 		FuncionesSieteMedia.nuevaPartida(jugadores);
+		FuncionesSieteMedia.bienvenida();
+		System.out.println();
+		System.out.println(FuncionesSieteMedia.turno(JUGADOR1));
 		FuncionesSieteMedia.tirada(jugadores, JUGADOR1);
-		
+		System.out.println();
+		System.out.println(FuncionesSieteMedia.turno(JUGADOR2));
+		FuncionesSieteMedia.tirada(jugadores,JUGADOR2);
+		System.out.println();
+		System.out.println(FuncionesSieteMedia.ganador(jugadores, JUGADOR1, JUGADOR2));
 	}
 }
