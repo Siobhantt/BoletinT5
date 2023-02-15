@@ -8,8 +8,11 @@ public class FuncionesBuscaminas {
 
 	public static char[] tablaLlena(char t[]) {
 		int posicionAleatoria;// aqui se guarda la posicion de las minas
-		// recorro la cantidad de minas
+
+		// lleno la tabla de 0s
 		Arrays.fill(t, '0');
+
+		// recorro la cantidad de minas
 		for (int i = 0; i < MINAS; i++) {
 			// es un do, porque necesito que siga generando una posicion en caso de que ya
 			// alla una mina en la posicion generada
@@ -27,7 +30,7 @@ public class FuncionesBuscaminas {
 		// Con este for estoy recorriendo la tabla
 		for (int i = 0; i < t.length; i++) {
 //aqui abajo hago las comprobaciones de 
-			// si es amyor a 0 o menor que que el final de la tabla entonces
+			// si es mayor a 0 o menor que que el final de la tabla entonces
 			if (i > 0 && i < t.length - 1 && t[i] == '0') {
 				// si en la posicion anterior y en la posicion siguiente a la que me encuentro
 				// hay un asterisco entonces igualo la posicion en la que estoy a 2
@@ -63,32 +66,35 @@ public class FuncionesBuscaminas {
 		} // fin del for
 		return t;
 	}// fin del metodo
-	
+
+	/*Esta funcion recibe las tablas y la posicion que escoja el user
+	 *  en caso de encontrar una mina, nos informa que ha perdido y nos muestra la tabla
+	 *  en caso contrario "destapa esa casilla" */
 	public static char[] muestraT(char tCosas[], char tUser[], int posUser) {
-		if(tCosas[posUser]=='*') {
+		if (tCosas[posUser] == '*') {
 			System.out.println(Arrays.toString(tCosas));
-			System.out.println("Has perdido");
-		}
-		else {
+			System.out.println("Has perdido! :((");
+		} else {
 			tUser[posUser] = tCosas[posUser];
 			System.out.println(Arrays.toString(tUser));
 		}
 		return tUser;
-	}//fin del metodo
-	
-	public static boolean ganaste (char tUser[]) {
-		int contadorAgujeros=14;
-		boolean ganaste=false;
-		
-		for(int i=0;i<tUser.length;i++) {
-			if (tUser[i]=='0' || tUser[i]=='1' || tUser[i]=='2' ) {
+	}// fin del metodo
+
+	/*Funcion que nos devuelve true en caso de que se recorra la tabla y solo queden 6 casillas sin destapar*/
+	public static boolean ganaste(char tUser[]) {
+		int contadorAgujeros = 14;
+		boolean ganaste = false;
+//en caso de que encuentre en la tabla oculta una pista le resta al contador y cuando este llegue a 0 significa que el jugador ha ganado
+		for (int i = 0; i < tUser.length; i++) {
+			if (tUser[i] == '0' || tUser[i] == '1' || tUser[i] == '2') {
 				contadorAgujeros--;
 			}
 		}
-		if(contadorAgujeros ==0) {
-			ganaste =true; 
+		if (contadorAgujeros == 0) {
+			ganaste = true;
 		}
 		return ganaste;
-		
-	}//fin del metodo
+
+	}// fin del metodo
 }// fin de la clase
