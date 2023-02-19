@@ -22,8 +22,9 @@ public class MainBuscaminas {
 		//en este bucle solicitamos la posicion que quiera el usuario
 		do {
 			System.out.println("Por favor introduzca la posicion que quiere destapar: ");
+			System.out.println(Arrays.toString(tablota));
 			posUser = lee.nextInt();
-			tablota = FuncionesBuscaminas.muestraT(t, tablota, posUser); //y muestramos lo que esté en esa posicion
+			tablota = FuncionesBuscaminas.muestraT(t, tablota, posUser); //y mostramos lo que esté en esa posicion
 			ganar = FuncionesBuscaminas.ganaste(tablota); //llamamos a la funcion de ganar y mientras esta sea false o distinta a una mina continuamos
 		} while (t[posUser] != '*' && ganar == false);
 		if (ganar == true) { //en caso de ganar mostramos un mensaje
